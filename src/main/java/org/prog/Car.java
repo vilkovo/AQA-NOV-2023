@@ -2,12 +2,18 @@ package org.prog;
 
 public class Car implements ITurnable {
 
-    public String color;
+    public String color = null;
     public String engineVolume;
 
     public void drive() {
         System.out.println("Driving car");
         switchGear();
+    }
+
+    //TODO: call this method when there is not color set, and intercept exception that occurs
+    //TODO: in same block in finally set car color to some value
+    public void printColorlength() {
+        System.out.println(color.length());
     }
 
     private void switchGear() {
