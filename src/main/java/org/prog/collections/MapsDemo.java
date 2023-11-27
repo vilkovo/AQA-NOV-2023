@@ -37,6 +37,8 @@ public class MapsDemo {
         System.out.println(stringMap.get("null_value"));
         System.out.println(stringMap.get("key_that_not_exists"));
 
+        stringMap.put("string", "string");
+
         Collection<String> c = stringMap.values();
     }
 }

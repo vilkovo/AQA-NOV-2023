@@ -47,4 +47,17 @@ public class Car implements ITurnable {
         System.out.println("This vehicle goes to " + city + " from " + fromCity +
                 " passing through " + passingThrough + " with " + withCargo + " cargo");
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Car) {
+            return ((Car) obj).color.equals(this.color);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return color.hashCode();
+    }
 }
