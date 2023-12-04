@@ -5,7 +5,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.devtools.v117.audits.model.StyleSheetLoadingIssueReason;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,7 +23,6 @@ public class SeleniumDemo {
             driver.get("https://google.com/");
 
             WebElement cookiesLink = driver.findElement(By.partialLinkText("cookie"));
-            String cookiesUrl = cookiesLink.getAttribute("href");
 
             if (cookiesLink.isDisplayed()) {
                 System.out.println("Cookies form is shown!");
