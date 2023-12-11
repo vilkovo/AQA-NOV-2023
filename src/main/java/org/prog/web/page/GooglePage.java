@@ -23,13 +23,19 @@ public class GooglePage {
     }
 
     public void acceptCookiesIfPresent() {
-        WebElement cookiesLink = driver.findElement(By.partialLinkText("cookie"));
+        List<WebElement> cookieElement = driver.findElements(By.partialLinkText("cookie"));
 
-        if (cookiesLink.isDisplayed()) {
-            System.out.println("Cookies form is shown!");
-            List<WebElement> cookieFormButtons = driver.findElements(
-                    By.xpath("//a[contains(text(),'cookie')]/../../../..//button"));
-            cookieFormButtons.get(3).click();
+        if (!cookieElement.isEmpty()) {
+            WebElement cookiesLink = driver.findElement(By.partialLinkText("cookie"));
+
+            if (cookiesLink.isDisplayed()) {
+                System.out.println("Cookies form is shown!");
+                List<WebElement> cookieFormButtons = driver.findElements(
+                        By.xpath("//a[contains(text(),'cookie')]/../../../..//button"));
+                cookieFormButtons.get(3).click();
+            }
+        } else {
+            System.out.println("Cookie form not visible");
         }
     }
 
