@@ -52,13 +52,6 @@ public class WebTests {
         googlePage.performSearch();
         List<WebElement> searchHeaders = googlePage.getSearchHeaders(celebrity);
 
-//        boolean nameFound = false;
-//        for (WebElement element : searchHeaders) {
-//            if (element.getText().contains(celebrity)) {
-//                nameFound = true;
-//            }
-//        }
-//        Assert.assertTrue(nameFound, "Celebrity not found on google");
         Assert.assertTrue(searchHeaders.stream().anyMatch(
                         webElement -> webElement.getText().contains(celebrity)),
                 "Celebrity not found on google");
