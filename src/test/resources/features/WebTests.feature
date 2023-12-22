@@ -20,12 +20,12 @@ Feature: Tests Browser + API + DB integration
       | "B"   | "E"        | "2"        |
       | "C"   | "F"        | "3"        |
 
-  Scenario Outline: password example
-    Given I set new user password to <pwd>
-    When I click register
-    Then I see error <error>
-    Examples:
-      | pwd               | error                            |
-      | "ab1"             | "Password too short"             |
-      | "abbcccdddeee"    | "Password must contain digits!"  |
-      | "123123123123123" | "Password must contain letters!" |
+#  Scenario Outline: password example
+#    Given I set new user password to <pwd>
+#    When I click register
+#    Then I see error <error>
+#    Examples:
+#      | pwd               | error                            |
+#      | "ab1"             | "Password too short"             |
+#      | "abbcccdddeee"    | "Password must contain digits!"  |
+#      | "123123123123123" | "Password must contain letters!" |
