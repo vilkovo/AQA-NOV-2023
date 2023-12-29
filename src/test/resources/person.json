@@ -3,11 +3,29 @@
     {
       "gender": "female",
       "name": {
-        "title": "Mrs",
-        "first": "Gloria",
-        "last": "Navarro"
+        "title": "Miss",
+        "first": "Aurora",
+        "last": "Thomas"
       },
-      "nat": "ES"
+      "location": {
+        "street": {
+          "number": 327,
+          "name": "Wiri Station Road"
+        },
+        "city": "Wellington",
+        "state": "Wellington",
+        "country": "New Zealand",
+        "postcode": 47137,
+        "coordinates": {
+          "latitude": "48.5240",
+          "longitude": "0.9604"
+        },
+        "timezone": {
+          "offset": "-2:00",
+          "description": "Mid-Atlantic"
+        }
+      },
+      "nat": "NZ"
     }
   ]
 }
