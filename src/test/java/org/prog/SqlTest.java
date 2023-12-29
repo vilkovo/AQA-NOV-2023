@@ -58,7 +58,7 @@ public class SqlTest {
     }
 
     @Test
-    public void insertSql() throws ClassNotFoundException, SQLException {
+    public void insertSql() throws SQLException {
         List<PersonDto> persons = getPersons(3);
         if (persons.isEmpty()) {
             Assert.fail("No persons fetched!");

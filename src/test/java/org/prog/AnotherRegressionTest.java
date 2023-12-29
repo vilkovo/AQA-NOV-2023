@@ -27,13 +27,6 @@ public class AnotherRegressionTest extends BaseTest {
         System.out.println("Hello Test!");
     }
 
-    @Test(dataProvider = "values")
-    public void parametrizedTest(String input, String output) {
-        System.out.println("Checking " + input);
-        System.out.println("Checking " + output);
-        System.out.println(input.length());
-    }
-
     @DataProvider(name = "values")
     public Object[][] dataProvider() {
         return new Object[][] {
