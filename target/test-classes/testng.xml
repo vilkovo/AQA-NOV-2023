@@ -6,16 +6,7 @@
     <test name="Regression 1">
         <classes>
             <!--BeforeMethod-->
-            <class name="org.prog.MyTest"/>
-            <class name="org.prog.RegressionTest"/>
-        </classes>
-    </test>
-    <!--    BeforeTest-->
-    <test name="Regression 2">
-        <classes>
-            <!--BeforeMethod-->
-            <class name="org.prog.MyAnotherTest"/>
-            <class name="org.prog.AnotherRegressionTest"/>
+            <class name="org.prog.cucumber.CucumberWipRunner"/>
         </classes>
     </test>
 </suite>
