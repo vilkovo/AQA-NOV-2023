@@ -27,3 +27,4 @@ replay_pid*
 /docker/jenkins/jenkins_configuration/*
 /target/
 *.iml
+/allure-results/
