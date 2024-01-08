@@ -75,9 +75,16 @@ public class DBSteps {
     }
 
     public void setupDbConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver"); //WARN: SQL connections wont work without this!
-        connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/db", "user", "password");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String platform = System.getProperty("platform.type");
+        if ("jenkins-selenoid".equals(platform)) {
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://mysql-db-1:3306/db", "user", "password");
+        } else {
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/db", "user", "password");
+        }
+        //WARN: SQL connections wont work without this!
         statement = connection.createStatement();
     }
 

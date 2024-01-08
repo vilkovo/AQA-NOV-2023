@@ -6,7 +6,7 @@
     <test name="Regression 1">
         <classes>
             <!--BeforeMethod-->
-            <class name="org.prog.cucumber.CucumberWipRunner"/>
+            <class name="org.prog.cucumber.CucumberRunner"/>
         </classes>
     </test>
 </suite>
