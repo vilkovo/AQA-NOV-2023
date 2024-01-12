@@ -5,12 +5,13 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.prog.util.DataHolder;
-import org.prog.web.dto.PersonDto;
 import org.prog.web.dto.SearchResultsDto;
-
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class RestSteps {
+
+    @Autowired
+    private DataHolder dataHolder;
 
     @Given("I request {int} users from random user service as {string}")
     public void requestUsersFromService(int amount, String alias) {
@@ -25,6 +26,6 @@ public class RestSteps {
         response.then().statusCode(200);
 
         SearchResultsDto dto = response.as(SearchResultsDto.class);
-        DataHolder.getInstance().put(alias, dto.getResults());
+        dataHolder.put(alias, dto.getResults());
     }
 }

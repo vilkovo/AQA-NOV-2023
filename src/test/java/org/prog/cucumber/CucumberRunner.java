@@ -1,5 +1,6 @@
 package org.prog.cucumber;
 
+import io.cucumber.spring.CucumberContextConfiguration;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,6 +9,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.AbstractDriverOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.prog.cucumber.steps.GoogleSteps;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -15,9 +19,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
+@EnableTransactionManagement
+@EnableJpaRepositories("org.prog")
+@CucumberContextConfiguration
+@ContextConfiguration(locations = "classpath*:spring/spring-context.xml")
 @CucumberOptions(
         features = "src/test/resources/features/wip",
-        glue = "org.prog.cucumber.steps",
+        glue = "org.prog.cucumber",
         plugin = {"pretty",
                 "json:target/cucumber-reports/Cucumber.json",
                 "html:target/cucumber-report.html",

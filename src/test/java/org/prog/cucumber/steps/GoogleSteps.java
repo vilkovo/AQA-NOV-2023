@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.prog.elements.GoogleElements;
 import org.prog.util.DataHolder;
 import org.prog.web.dto.PersonDto;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.Duration;
 import java.util.List;
@@ -17,6 +18,9 @@ import java.util.List;
 public class GoogleSteps {
 
     public static WebDriver webDriver;
+
+    @Autowired
+    private DataHolder dataHolder;
 
     @Given("I load google page")
     public void loadGooglePage() {
@@ -71,8 +75,7 @@ public class GoogleSteps {
     }
 
     private String getPersonsFirstLastName(String alias) {
-        PersonDto person = (PersonDto) DataHolder.getInstance().get(alias);
+        PersonDto person = (PersonDto) dataHolder.get(alias);
         return person.getName().getFirst() + " " + person.getName().getLast();
     }
-
 }

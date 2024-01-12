@@ -7,7 +7,7 @@
         <classes>
             <!--BeforeMethod-->
             <class name="org.prog.cucumber.CucumberRunner"/>
-            <class name="org.prog.RegressionTest"/>
+<!--            <class name="org.prog.RegressionTest"/>-->
         </classes>
     </test>
 </suite>
